@@ -1,5 +1,9 @@
 # app-products
 
+## Version Node.js
+
+v16.14.2
+
 ## Project setup
 ```
 yarn install
