@@ -56,14 +56,22 @@ export default {
         box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
         border-radius: 4px;
         transition: ease .3s;
+
+        &:hover {
+            background: $grey;
+            color: $white;
+            transform: scale(1.03, 1.03);
+        }
     }
     .card-img {
         height: 200px;
         border-radius: 4px 4px 0px 0px ;
-    }
-    .card-img img{
-        border-radius: 4px 4px 0px 0px ;
-        background: url(@/assets/images/loading.webp) no-repeat center;
+
+        img {
+            border-radius: 4px 4px 0px 0px ;
+            background: url(@/assets/images/loading.webp) no-repeat center / cover;
+            object-fit: cover;
+        }
     }
     .card-title {
         margin: 16px;
@@ -94,10 +102,5 @@ export default {
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         transition: ease .5s;
-    }
-    .card:hover {
-        background: $grey;
-        color: $white;
-        transform: scale(1.03, 1.03);
     }
 </style>

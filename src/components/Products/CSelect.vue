@@ -1,7 +1,7 @@
 <template>
     <div class="select">
         <p 
-            :class="[showOptions ? 'border-radius-bottom-none' : '', 'title']" 
+            :class="[{ 'border-radius-bottom-none' : showOptions }, 'title']" 
             @click="clickSelect()"
         >
             <span >{{ optionIsActive.name }}  </span>
@@ -12,8 +12,7 @@
             <p
                 v-for="option in options"
                 :key="option.value"
-                class="option"
-                @click="$emit('option-change',option.value)"
+                @click="clickOption(option)"
             >
                 {{ option.name }}
             </p>
@@ -42,6 +41,10 @@ export default {
   methods: {
     clickSelect() {
         this.showOptions = !this.showOptions
+    },
+    clickOption(option) {
+        this.$emit('option-change',option.value);
+        this.showOptions = false
     }
   }
 }
@@ -56,7 +59,6 @@ export default {
         color: $grey;
         font-size: 12px;
         cursor: pointer;
-        z-index: 2;
     }
     .title {
         display: flex;
@@ -65,12 +67,10 @@ export default {
         background: $white;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
-    }
-    svg {
-        margin-left: 6px;
-    }
-    p {
-        margin: 0;
+
+        svg {
+            margin-left: 6px;
+        }
     }
     .options {
         position: absolute;
@@ -81,8 +81,10 @@ export default {
         background: $white;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         border-radius: 0px 0px 4px 4px;
-    }
-    .option {
-        padding: 6px 0px;
+        z-index: 999;
+
+        p {
+            padding: 6px 0px;
+        }
     }
 </style>

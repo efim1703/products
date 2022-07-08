@@ -31,13 +31,15 @@ export default {
       font-size: 12px;
       border-radius: 10px;
       transition: ease .4s;
-  }
-  button:hover {
-      background: #94cc8b;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  button:disabled {
-      background: #EEEEEE;
-      color: $grey;
+
+      &:hover {
+        background: #94cc8b;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      &:disabled {
+          background: #EEEEEE;
+          color: $grey;
+      }
   }
 </style>

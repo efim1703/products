@@ -94,7 +94,7 @@ export default {
   },
   computed: {
     btnIsDisabled() {
-      return (this.nameProduct && this.priceProduct && this.linkProduct) ? false : true
+      return !!(!this.nameProduct || !this.priceProduct || !this.linkProduct)
     }
   }
 }
@@ -116,6 +116,10 @@ export default {
     font-size: 28px;
     padding-top: 32px;
     margin-bottom: 16px;
+
+    @media screen and (max-width: 425px) {
+      font-size: 22px;
+    }
   }
   .add-form {
     position: sticky;
@@ -126,17 +130,10 @@ export default {
     background: $white;
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
     border-radius: 4px;
-  }
 
-  @media screen and (max-width: 1024px) {
-    .add-product {
+    @media screen and (max-width: 1024px) {
       text-align: center;
       max-width: 80%;
-    }
-  }
-  @media screen and (max-width: 425px) {
-    h2 {
-      font-size: 22px;
     }
   }
 </style>

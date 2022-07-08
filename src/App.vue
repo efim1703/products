@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import AddProduct from '@/components/AddProduct/index.vue'
-import TheProducts from '@/components/Products/index.vue'
+import AddProduct from '@/components/AddProduct/Index.vue'
+import TheProducts from '@/components/Products/Index.vue'
 
 export default {
   name: 'App',
@@ -53,7 +53,7 @@ export default {
     },
   },
   computed: {
-    filteredProducts() {
+    filteredProducts: function() {
       if (this.optionIsActive === 2) { 
         return this.products.slice().sort(this.sortPriceMin) 
       }
@@ -105,10 +105,8 @@ export default {
   #app {
     display: flex;
     align-items: stretch;
-  }
 
-  @media screen and (max-width: 1024px) {
-    #app {
+    @media screen and (max-width: 1024px) {
       flex-direction: column;
       align-items: center;
     }

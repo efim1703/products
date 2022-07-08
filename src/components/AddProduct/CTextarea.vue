@@ -78,13 +78,15 @@ export default {
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 12px;
         line-height: 15px;
-    }
-    textarea:focus {
-        border: 1px solid $white;
-    }
-    textarea::placeholder {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 12px !important;
-        color: $grey;
+
+        &:focus {
+            border: 1px solid $grey;
+        }
+
+        &::placeholder {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 12px !important;
+            color: $grey;
+        }
     }
 </style>

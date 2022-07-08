@@ -66,17 +66,19 @@ export default {
         width: fit-content;
         color: $dark-lesser;
         font-size: 10px;
+
+        span {
+            position: absolute;
+            top: 0;
+            right: -4px;
+            width: 4px;
+            height: 4px;
+            display: block;
+            background-color: $pink;
+            border-radius: 50%;
+        }
     }
-    span {
-        position: absolute;
-        top: 0;
-        right: -4px;
-        width: 4px;
-        height: 4px;
-        display: block;
-        background-color: $pink;
-        border-radius: 50%;
-    }
+    
     input {
         padding: 9px 16px;
         border: 1px solid $white;
@@ -85,22 +87,28 @@ export default {
         border-radius: 4px;
         font-size: 12px;
         line-height: 15px;
-    }
-    input:focus {
-        border: 1px solid $white;
-    }
-    input::placeholder {
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: 12px !important;
-        color: $grey;
+
+        &:focus {
+            border: 1px solid $grey;
+        }
+
+        &::placeholder {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 12px !important;
+            color: $grey;
+        }
+
+        &[type='number'] {
+            -moz-appearance:textfield;
+        }
+        
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
     }
-    input[type='number'] {
-        -moz-appearance:textfield;
-    }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
+    
     .error-message{
         position: absolute;
         bottom: -14px;

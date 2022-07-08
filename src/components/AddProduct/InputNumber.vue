@@ -104,21 +104,25 @@ export default {
         border-radius: 4px;
         font-size: 12px;
         line-height: 15px;
-    }
-    input:focus {
-        border: 1px solid $white;
-    }
-    input::placeholder {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 12px !important;
-        color: $grey;
-    }
-    input[type='number'] {
-        -moz-appearance:textfield;
-    }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
+
+        &:focus {
+            border: 1px solid $white;
+        }
+
+        &::placeholder {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 12px !important;
+            color: $grey;
+        }
+
+        &[type='number'] {
+            -moz-appearance:textfield;
+        }
+        
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
     }
     .error-message{
         position: absolute;

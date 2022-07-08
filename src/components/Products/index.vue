@@ -10,8 +10,8 @@
 
     <div class="list-products" >
       <card-product 
-        v-for="productItem in products" 
-        :key="productItem.id"
+        v-for="(productItem, index) in products" 
+        :key="index"
         :productItem="productItem"
         class="card-product"
         @delete-product="$emit('delete-product',$event)"
@@ -68,23 +68,20 @@ export default {
     gap: 16px;
     flex-wrap: wrap;
   }
-  .card-product:last-child {
-    margin-right: auto !important;
-  }
-  .card-product:nth-child(3n) {
-    margin-right: auto !important;
-  }
   .card-product {
     width: calc(100%/3 - 32px/3);
-  }
 
-  @media screen and (max-width: 768px) {
-    .card-product {
+    &:last-child {
+      margin-right: auto !important;
+    };
+    &:nth-child(3n) {
+      margin-right: auto !important;
+    };
+
+    @media screen and (max-width: 768px) {
       width: calc(100%/2 - 8px);
     }
-  }
-  @media screen and (max-width: 425px) {
-    .card-product {
+    @media screen and (max-width: 425px) {
       width: calc(100%/1);
     }
   }
