@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import AddProduct from './components/AddProduct/Index.vue'
-import TheProducts from './components/Products/Index.vue'
+import AddProduct from './components/AddProduct/index.vue'
+import TheProducts from './components/Products/index.vue'
 
 export default {
   name: 'App',
